@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturatued-blue: hsl(244, 38%, 16%);
+  --oft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+.picture {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  background-image: url(./images/image-header-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+  background-repeat: no-repeat;
+}
+
+.img-overlay {
+  height: 200px;
+  background-color: rgba(121, 11, 189, 0.7);
+}
+
+.container {
+  padding: 50px 20px;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  text-align: center;
+  background-color: var(--dark-desaturatued-blue);
+}
+
+.card h1 {
+  padding: 1.7rem 1rem 0.9rem;
+  font-size: 24px;
+  color: var(--white);
+}
+
+h1 span {
+  color: var(--oft-violet);
+}
+
+.card p {
+  font-size: 15px;
+  padding: 0px 10px 20px;
+  color: var(--slightly-transparent-white);
+}
+
+li {
+  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+li span.lowercase {
+  text-transform: lowercase;
+}
+
+@media screen and (min-width: 768px) {
+    
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .container {
+    width: 1024px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* I found that solution on stackoverflow */
+  .container > .picture {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .container .picture {
+    background: url(./images/image-header-desktop.jpg) no-repeat center/cover;
+    min-width: 50%;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .card {
+    height: 100%;
+    text-align: left;
+  }
+
+  .img-overlay {
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .card h1 {
+    padding: 2rem 3rem;
+    font-size: 25px;
+  }
+
+  .card p {
+    font-size: 15px;
+    padding: 1rem 3rem;
+    color: var(--slightly-transparent-white);
+  }
+
+  ul {
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: space-around;
+  }
+
+  li {
+    padding: 20px 0;
+    font-size: 15px;
+    color: var(--clr-stat-headings);
+  }
+
+  li span {
+    display: block;
+    font-size: 30px;
+  }
+}
